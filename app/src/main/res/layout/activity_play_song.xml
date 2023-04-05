@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".playSong">
+
+    <ImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="380dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="Music Thumbnail"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:requiresFadingEdge="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/songName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.24000001"
+        app:srcCompat="@drawable/music" />
+
+    <TextView
+        android:id="@+id/songName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:fadingEdge="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:fontFamily="@font/nunito"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:requiresFadingEdge="horizontal"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="Song Name"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thumbnail" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar">
+
+        <ImageButton
+            android:id="@+id/previous"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            app:srcCompat="@drawable/previous"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/playpause"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            app:srcCompat="@drawable/pause"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
+        <ImageButton
+            android:id="@+id/next"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            app:srcCompat="@drawable/next"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@style/Widget.AppCompat.SeekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginRight="20dp"
+        android:max="10"
+        android:progress="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/songName" />
+
+    <TextView
+        android:id="@+id/artistName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/nunito"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:text="TextView"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/songName"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/currentTimeline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/nunito"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <TextView
+        android:id="@+id/finalTimeline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/nunito"
+        android:text="TextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/currentTimeline"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
